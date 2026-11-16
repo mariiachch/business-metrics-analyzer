@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+
+actor "Коммерческий директор" as CD
+actor "Руководитель отдела" as RO
+actor "Менеджер по продажам" as MP
+actor "Аналитик" as AN
+actor "Администратор" as AD
+
+rectangle "Business Metrics Analyzer" {
+  usecase "Вход в систему" as UC0
+  usecase "Загрузка выгрузки продаж" as UC1
+  usecase "Просмотр сводки KPI" as UC2
+  usecase "Просмотр результатов отдела" as UC3
+  usecase "Формирование отчёта за период" as UC4
+  usecase "Сохранение отчёта в Excel" as UC5
+  usecase "Управление пользователями и ролями" as UC6
+  usecase "Просмотр своих продаж" as UC7
+  usecase "Просмотр журнала загрузок" as UC8
+}
+
+CD --> UC0
+RO --> UC0
+MP --> UC0
+AN --> UC0
+AD --> UC0
+
+MP --> UC1
+MP --> UC7
+CD --> UC2
+RO --> UC3
+AN --> UC4
+AN --> UC5
+AD --> UC6
+AD --> UC8
+@enduml
